@@ -1,0 +1,67 @@
+.container
+{
+    margin-top: 110px;
+    width: 90%;
+}
+body
+{
+    background-image: url(../img/wallpaper.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.login
+{
+    background-color: white;
+    opacity: 0.9;
+    padding: 5%;
+    margin-top: 5%;
+    text-align: center;
+}
+button
+{
+    border-radius: 5px;
+    background-color: #0036a0;
+    color: white;
+    width: 100px;
+    margin-top: 2%;
+}
+h1
+{
+    font-size: 22px;
+    margin-bottom: 2%;
+}
+label
+{
+    font-size: 14px;
+}
+input
+{
+    width: 30%;
+}
+p
+{
+    font-size: 12px;
+}
+a
+{
+    color: #0036a0;
+}
+
+@media screen and (min-width: 480px){
+    .container
+    {
+    margin-top: 90px;
+    }
+    body
+    {
+        background-size: 150%;
+    }
+}
+
+@media screen and (min-width: 800px){
+    body
+    {
+        background-size: 100%;
+    }
+}
