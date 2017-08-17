@@ -47,7 +47,13 @@ a
 {
     color: #0036a0;
 }
-
+footer
+{
+    display: block;
+    text-align: center;
+    background-color: darkslategrey;
+    color: white;
+}
 @media screen and (min-width: 480px){
     .container
     {

@@ -1,7 +1,5 @@
 <?php
-include_once "inc/header.inc.php";
 
-/*
 try {
 
     if (!empty($_POST)) {
@@ -31,7 +29,6 @@ try {
 catch(Exception $e){
     $error = $e->getMessage();
 }
-*/
 
 ?>
 <!DOCTYPE html>
@@ -42,7 +39,7 @@ catch(Exception $e){
 </head>
 <body>
 
-
+<?php include_once "inc/header.inc.php"; ?>
 <div class="container">
   
    <div class="login">
@@ -56,9 +53,12 @@ catch(Exception $e){
         <br>
         <button>login</button>
         <p>or</p>
-        <a href="">register</a>
+        <a href="register.php">register</a>
     </form>
     </div>
         </div>
+        
+        
+<?php include_once "inc/footer.inc.php"; ?>
 </body>
 </html>
