@@ -1,11 +1,8 @@
 <?php
-session_start();
-
 spl_autoload_register(function($class){
     include_once("classes/". $class . ".class.php");
 });
-?>
-    <!DOCTYPE html>
+?><!DOCTYPE html>
     <html lang="en">
     <head>
            <link rel="stylesheet" href="css/bootstrap-grid.css">

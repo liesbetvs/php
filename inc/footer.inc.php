@@ -10,7 +10,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        
+    </div>
     <footer>
         <p>Liesbet Van Seghbroeck</p>
     </footer>

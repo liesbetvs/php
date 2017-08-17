@@ -2,7 +2,8 @@
 if (!empty($_POST)){
     try {
         $user = new User();
-        $user->setFullname($_POST["fullname"]);
+        $user->setFirstname($_POST["firstname"]);
+        $user->setLastname($_POST["lastname"]);
         $user->setEmail($_POST["email"]);
         $user->setPassword($_POST["password"]);
         $user->setUsername($_POST["username"]);

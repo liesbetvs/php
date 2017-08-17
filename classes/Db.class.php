@@ -8,7 +8,7 @@ abstract class Db {
             return self::$conn;
         }else{
             //er is geen connectie, maak er eentje aan
-            self::$conn = new PDO('mysql:host=localhost; dbname=deadlines', 'root', '');
+            self::$conn = new PDO('mysql:host=localhost;dbname=deadlines;user=root;password=root');
             return self::$conn;
         }
     }
