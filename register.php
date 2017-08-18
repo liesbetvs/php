@@ -1,4 +1,5 @@
 <?php
+include_once "classes/User.class.php";
 if (!empty($_POST)){
     try {
         $user = new User();
