@@ -8,7 +8,7 @@ if (!empty($_POST)){
         $user->setEmail($_POST["email"]);
         $user->setPassword($_POST["password"]);
         $user->setUsername($_POST["username"]);
-        $user->register();
+        echo $user->register();
         $message = "";
     } catch (Exception $e) {
         $message = $e->getMessage();

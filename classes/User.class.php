@@ -73,7 +73,7 @@ class User {
     }
 
     public function register() {
-        session_start();
+        //session_start();
         $pdo = Db::getInstance();
         $stmt = $pdo->prepare("INSERT INTO user (username, firstname, lastname, email, password) VALUES (:username, :firstname, :lastname, :email, :password)");
         $stmt->bindValue(":username", $this->username);
@@ -85,7 +85,12 @@ class User {
         ];
         $hash = password_hash($this->password, PASSWORD_DEFAULT, $options);
         $stmt->bindValue(":password", $hash);
-        return $stmt->execute();
+        $result = $stmt->execute();
+        if($result){
+            return "toegoevoegd";
+        }else{
+            return "mislukt";
+        }
     }
 
 }
