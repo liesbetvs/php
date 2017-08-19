@@ -132,9 +132,9 @@ class User {
         $stmt->bindValue(":password", $hash);
         $result = $stmt->execute();
         if($result){
-            return "gelukt";
+             return "De account is aangemaakt. U kunt nu <a href='login.php'>inloggen</a>.";
         }else{
-            return "mislukt";
+            return "Er is een fout opgetreden tijdens het aanmaken van de account";
         }
     }
 
