@@ -5,7 +5,7 @@
 }
 body
 {
-    background-image: url(../img/wallpaper.jpg);
+    background-image: url(../img/workspace_background-wallpaper-3000x2000.jpg);
     background-size: 300%;
     background-repeat: no-repeat;
     width: 100%;
@@ -66,11 +66,28 @@ footer
     }
     body
     {
-        background-size: 150%;
+        background-size: 250%;
+    }
+}
+@media screen and (min-width: 600px){
+    .container
+    {
+    margin-top: 90px;
+    }
+    body
+    {
+        background-size: 200%;
     }
 }
 
+
 @media screen and (min-width: 800px){
+    body
+    {
+        background-size: 150%;
+    }
+}
+@media screen and (min-width: 1000px){
     body
     {
         background-size: 100%;
