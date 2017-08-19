@@ -1,8 +1,10 @@
 <?php
-include_once "inc/header.inc.php";
-showheader('login');
+	include_once "inc/header.inc.php";
+	showheader('login');
+?>
 
-$error= "";
+<?php
+$error = "";
 
 try {
 
@@ -14,17 +16,17 @@ try {
         $user->setPassword($password);
 
         // 3) login functie:
-        if ($user->canLogin() == true) {
-            $error = "gelukt";
-            
-            $user_data = $user->getDetails();
-            $_SESSION['username'] = $user_data['username'];
-            $_SESSION['email'] = $user_data['email'];
-            $_SESSION['fullname'] = $user_data['fullname'];
-            $_SESSION['todo_login'] = true;
-            header('location: index.php');
+        if ( $user->canLogin() == true) {
+			$error = "gelukt";
+			
+			$user_data = $user->getDetails();
+			$_SESSION['username'] = $user_data['username'];
+			$_SESSION['email'] = $user_data['email'];
+			$_SESSION['fullname'] = $user_data['fullname'];
+			$_SESSION['todo_login'] = true;
+			header('location: index.php');
         } else {
-                    $error = "Wrong username/password combination";
+			$error = "Wrong username/password combination";
         }
     }
 

@@ -13,9 +13,12 @@ if (!empty($_POST)){
     } catch (Exception $e) {
         $message = $e->getMessage();
     }
-}else{
+    }
+else{
 
-};
+}
+
+;
 
 include_once "inc/header.inc.php";
 showheader('register');

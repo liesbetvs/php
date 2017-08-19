@@ -74,7 +74,7 @@ class User {
     }
 
     public function setFullname() {
-        $this->fullname = $this->getFirstName(). "".$this->getLastname();
+        $this->fullname = $this->getFirstName()." ".$this->getLastname();
     }
     public function getFullName() {
         return $this->fullname;

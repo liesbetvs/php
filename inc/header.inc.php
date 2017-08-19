@@ -3,9 +3,7 @@ session_start();
 spl_autoload_register(function($class){
     include_once("classes/". $class . ".class.php");
 });
-?>
-   
-<?php
+
 function showheader($title){ ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -45,7 +43,6 @@ function showheader($title){ ?>
         </ul>
       </div>
     </nav>
-        </body>
-    </html><?php
+<?php
 }
 ?>

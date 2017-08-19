@@ -1,23 +1,13 @@
 <?php
-if(isset($_SESSION['todo_login'])){
-    //sessie bestaat, er is al ingelogd
-    header("location:home.php");
-}
-else{
-    //er is nog niet ingelogd
-    header("location: login.php");
-}
-
 include_once "inc/header.inc.php";
 showheader('home');
+
+if(!isset($_SESSION['todo_login'])){
+	//er is nog niet ingelogd
+    header("location: login.php");
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Taken</title>
-</head>
-<body>
+
 <div class="container">
 <div class="login">
 <div class="row">
