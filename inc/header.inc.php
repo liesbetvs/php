@@ -2,7 +2,11 @@
 spl_autoload_register(function($class){
     include_once("classes/". $class . ".class.php");
 });
-?><!DOCTYPE html>
+?>
+   
+<?php
+function showheader($title){ ?>
+<!DOCTYPE html>
     <html lang="en">
     <head>
            <link rel="stylesheet" href="css/bootstrap-grid.css">
@@ -11,7 +15,7 @@ spl_autoload_register(function($class){
     <link rel="stylesheet" href="css/bootstrap.min.css">
        <link rel="stylesheet" href="css/style.css">
         <meta charset="UTF-8">
-        <title>nav</title>
+        <title><?php echo $title; ?></title>
     </head>
     <body>
         
@@ -41,4 +45,6 @@ spl_autoload_register(function($class){
       </div>
     </nav>
         </body>
-    </html>
+    </html><?php
+}
+?>

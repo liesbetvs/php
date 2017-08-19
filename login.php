@@ -2,7 +2,7 @@
 
 session_start();
 include_once "inc/header.inc.php";
-//showheader('login');
+showheader('login');
 
 $error= "";
 
@@ -48,7 +48,6 @@ catch(Exception $e){
 </head>
 <body>
 
-<?php include_once "inc/header.inc.php"; ?>
 <div class="container">
   
    <div class="login">

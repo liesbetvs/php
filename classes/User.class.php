@@ -79,19 +79,20 @@ class User {
         $stmt->execute();
             $result = $stmt->fetchAll();
        
-        if(count($result) > 0){
-            $hash = $result[0]['password'];
-            $password = $this->password;
-            
-            if(password_verify($password, $hash)){
-                return true;
-            } 
-            else {
-                return false;
-            }
-            else {
-                return false;
-            }
+       if(count($result) > 0){
+			//password comparisation
+			$hash = $result[0]['password'];
+			$password = $this->password;
+
+			if( password_verify($password, $hash)) {
+				//passwords match
+				return true;
+			}else{
+				//wrong password
+				return false;
+		    }
+        }else{
+            return false;
         }
     }
     

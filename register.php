@@ -16,6 +16,10 @@ if (!empty($_POST)){
 }else{
 
 };
+
+include_once "inc/header.inc.php";
+showheader('register');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +28,7 @@ if (!empty($_POST)){
     <title>Register</title>
 </head>
 <body>
-<?php
-include_once "inc/header.inc.php";
-?>
+
     <div class="container">
   
    <div class="login">
