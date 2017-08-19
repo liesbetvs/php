@@ -72,6 +72,29 @@ class User {
         }
     }
 
+    public function canLogin(){
+        $pdo = Db::getInstance();
+        $stmt= $pdo->prepare("SELECT * FROM user WHERE username = :username LIMIT 0,1");
+        $stmt->bindValue(":username", $this->username);
+        $stmt->execute();
+            $result = $stmt->fetchAll();
+       
+        if(count($result) > 0){
+            $hash = $result[0]['password'];
+            $password = $this->password;
+            
+            if(password_verify($password, $hash)){
+                return true;
+            } 
+            else {
+                return false;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    
     public function register() {
         //session_start();
         $pdo = Db::getInstance();
