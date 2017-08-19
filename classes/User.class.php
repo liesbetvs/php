@@ -7,6 +7,7 @@ class User {
     private $firstname;
     private $lastname;
     private $password;
+    private $fullname;
 
     public function getEmail() {
         return $this->email;
@@ -72,6 +73,13 @@ class User {
         }
     }
 
+    public function setFullname() {
+        $this->fullname = $this->getFirstName(). "".$this->getLastname();
+    }
+    public function getFullName() {
+        return $this->fullname;
+    }
+    
     public function canLogin(){
         $pdo = Db::getInstance();
         $stmt= $pdo->prepare("SELECT * FROM user WHERE username = :username LIMIT 0,1");
@@ -86,6 +94,10 @@ class User {
 
 			if( password_verify($password, $hash)) {
 				//passwords match
+                $this->setUsername($result[0]['username']);
+                $this->setFirstname($result[0]['firstname']);
+                $this->setLastname($result[0]['lastname']);
+                $this->setFullname();
 				return true;
 			}else{
 				//wrong password
@@ -94,6 +106,14 @@ class User {
         }else{
             return false;
         }
+    }
+    
+    public function getDetails(){
+        $user_data['username'] = $this->getUsername();
+        $user_data['email'] = $this->getEmail();
+        $user_data['fullname'] = $this->getFullName();
+        
+        return $user_data;
     }
     
     public function register() {

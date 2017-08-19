@@ -1,4 +1,13 @@
 <?php
+if(isset($_SESSION['todo_login'])){
+    //sessie bestaat, er is al ingelogd
+    header("location:home.php")
+}
+else{
+    //er is nog niet ingelogd
+    header("location: login.php")
+}
+
 include_once "inc/header.inc.php";
 showheader('home');
 ?>
@@ -16,7 +25,7 @@ showheader('home');
 <div class="col-md-4" id="overzicht">
     <a href="logout.php">Logout</a>
      <img src="" alt=""> 
-     <h2>Naam student</h2>
+     <h2><?php echo $_SESSION['fullname']; ?></h2>
    <a href="">Add task</a>
 </div>
 

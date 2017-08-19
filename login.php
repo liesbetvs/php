@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 include_once "inc/header.inc.php";
 showheader('login');
 
@@ -16,17 +14,14 @@ try {
         $user->setPassword($password);
 
         // 3) login functie:
-        if ($user->canLogin()==true) {
+        if ($user->canLogin() == true) {
             $error = "gelukt";
-            /*
             $user_data = $user->getDetails();
-            $_SESSION['id'] = $user_data->id;
-            $_SESSION['username'] = $user_data->username;
-            $_SESSION['email'] = $user_data->email;
-            $_SESSION['fullname'] = $user_data->fullname;
+            $_SESSION['username'] = $user_data['username'];
+            $_SESSION['email'] = $user_data['email'];
+            $_SESSION['fullname'] = $user_data['fullname'];
             $_SESSION['todo_login'] = true;
             header('location: index.php');
-            */
         } else {
                     $error = "Wrong username/password combination";
         }
@@ -40,13 +35,6 @@ catch(Exception $e){
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
 
 <div class="container">
   
@@ -69,5 +57,3 @@ catch(Exception $e){
         
         
 <?php include_once "inc/footer.inc.php"; ?>
-</body>
-</html>

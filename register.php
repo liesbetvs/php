@@ -21,13 +21,6 @@ include_once "inc/header.inc.php";
 showheader('register');
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-</head>
-<body>
 
     <div class="container">
   
