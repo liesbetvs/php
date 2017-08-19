@@ -1,5 +1,6 @@
 <?php
 include_once "classes/User.class.php";
+$message = "";
 if (!empty($_POST)){
     try {
         $user = new User();
@@ -8,17 +9,13 @@ if (!empty($_POST)){
         $user->setEmail($_POST["email"]);
         $user->setPassword($_POST["password"]);
         $user->setUsername($_POST["username"]);
-        echo $user->register();
-        $message = "";
+        $message = $user->register();
+        //$message = "";
     } catch (Exception $e) {
         $message = $e->getMessage();
     }
-    }
-else{
-
 }
 
-;
 
 include_once "inc/header.inc.php";
 showheader('register');
@@ -33,6 +30,7 @@ showheader('register');
                 <div class="col-md-8 col-md-offset-2">
        
         <legend>Fill in the username and password you want to register with</legend>
+                    <div id="message"><?php echo $message; ?></div>
         <div>
             <label for="email">Email</label>
             <input type="email" name="email" id="email">

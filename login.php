@@ -1,9 +1,6 @@
 <?php
 	include_once "inc/header.inc.php";
-	showheader('login');
-?>
 
-<?php
 $error = "";
 
 try {
@@ -37,6 +34,7 @@ catch(Exception $e){
     $error = $e->getMessage();
 }
 
+showheader('login');
 ?>
 
 <div class="container">

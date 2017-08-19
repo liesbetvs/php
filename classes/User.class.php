@@ -132,7 +132,7 @@ class User {
         $stmt->bindValue(":password", $hash);
         $result = $stmt->execute();
         if($result){
-            return "toegoevoegd";
+            return "gelukt";
         }else{
             return "mislukt";
         }
