@@ -52,14 +52,14 @@ catch(Exception $e){
   
    <div class="login">
    <h1>LOGIN</h1>
-    <form action="login">
+    <form action="login.php" method="post">
         <label for="username">username</label>
         <input type="text" id="username">
         <br>
         <label for="password">password</label>
         <input type="password" id="password">
         <br>
-        <button>login</button>
+        <input type="submit" class="button" name="login" value="login">
         <p>or</p>
         <a href="register.php">register</a>
     </form>

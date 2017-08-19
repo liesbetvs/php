@@ -59,6 +59,11 @@ showheader('register');
         </div>
 
 
-    <button class="btn" type="submit" >Submit</button>    
+    <button class="btn" type="submit" >Submit</button>   
+    </div>
+      </div>
+       </form>
+    </div>
+     <?php include_once "inc/footer.inc.php"; ?> 
 </body>
 </html>
