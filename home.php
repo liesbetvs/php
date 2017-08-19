@@ -1,11 +1,11 @@
 <?php
 if(isset($_SESSION['todo_login'])){
     //sessie bestaat, er is al ingelogd
-    header("location:home.php")
+    header("location:home.php");
 }
 else{
     //er is nog niet ingelogd
-    header("location: login.php")
+    header("location: login.php");
 }
 
 include_once "inc/header.inc.php";
@@ -23,7 +23,7 @@ showheader('home');
 <div class="row">
 
 <div class="col-md-4" id="overzicht">
-    <a href="logout.php">Logout</a>
+    <a href="logout.php" target="_self">Logout</a>
      <img src="" alt=""> 
      <h2><?php echo $_SESSION['fullname']; ?></h2>
    <a href="">Add task</a>

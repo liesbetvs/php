@@ -73,7 +73,7 @@ class User {
         }
     }
 
-    public function setFullName() {
+    public function setFullname() {
         $this->fullname = $this->getFirstName(). "".$this->getLastname();
     }
     public function getFullName() {
@@ -95,6 +95,7 @@ class User {
 			if( password_verify($password, $hash)) {
 				//passwords match
                 $this->setUsername($result[0]['username']);
+                $this->setEmail($result[0]['email']);
                 $this->setFirstname($result[0]['firstname']);
                 $this->setLastname($result[0]['lastname']);
                 $this->setFullname();
