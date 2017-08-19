@@ -24,7 +24,7 @@ try {
             $_SESSION['username'] = $user_data->username;
             $_SESSION['email'] = $user_data->email;
             $_SESSION['fullname'] = $user_data->fullname;
-            $_SESSION['loggedin'] = true;
+            $_SESSION['todo_login'] = true;
             header('location: index.php');
             */
         } else {
@@ -52,12 +52,13 @@ catch(Exception $e){
   
    <div class="login">
    <h1>LOGIN</h1>
+   <div id="error"><?php echo $error ?></div>
     <form action="login.php" method="post">
         <label for="username">username</label>
-        <input type="text" id="username">
+        <input type="text" id="username" name="username">
         <br>
         <label for="password">password</label>
-        <input type="password" id="password">
+        <input type="password" id="password" name="password">
         <br>
         <input type="submit" class="button" name="login" value="login">
         <p>or</p>
