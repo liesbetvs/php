@@ -16,6 +16,7 @@ try {
         // 3) login functie:
         if ($user->canLogin() == true) {
             $error = "gelukt";
+            
             $user_data = $user->getDetails();
             $_SESSION['username'] = $user_data['username'];
             $_SESSION['email'] = $user_data['email'];

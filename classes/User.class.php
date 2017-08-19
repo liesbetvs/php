@@ -73,7 +73,7 @@ class User {
         }
     }
 
-    public function setFullname() {
+    public function setFullName() {
         $this->fullname = $this->getFirstName(). "".$this->getLastname();
     }
     public function getFullName() {
