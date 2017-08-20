@@ -17,9 +17,12 @@ if(!isset($_SESSION['todo_login'])){
      <img src="" alt=""> 
      <h2><?php echo $_SESSION['todo_fullname']; ?></h2>
    <a href="javascript: addProject();" target="_self">Add Project</a>
+   <ul id="projectlist"></ul>
 </div>
 
 <script type="text/javascript" language="javascript">
+    updateProjectList();
+    
     function addProject() {
         var project = prompt("Please give the name of your new project", " ");
         if(project != null){
@@ -37,6 +40,17 @@ if(!isset($_SESSION['todo_login'])){
         }
     }
     function updateProjectList(){
+        $.ajax
+        ({
+            type: "GET",
+            url: "getprojects.php",
+            success: function(data){
+                var $this = $("#projectlist").empty();
+                for (x in data) {
+                    $("<li />").text(data[x].value).appendTO($this);
+                };
+            }
+        });
     }
     </script>
 

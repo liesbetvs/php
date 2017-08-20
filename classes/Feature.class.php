@@ -15,7 +15,14 @@ class feature
             return "There was an error while adding the new project";
         }
     }
+
+
+public function getProjects() {
+    $pdo = Db::getInstance();
+    $stmt = $pdo->prepare("SELECT projectID, projectName FROM project");
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
 }
-
-
+}
 ?>
