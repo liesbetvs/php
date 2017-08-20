@@ -39,19 +39,44 @@ if(!isset($_SESSION['todo_login'])){
             });
         }
     }
-    function updateProjectList(){
-        $.ajax
-        ({
-            type: "GET",
-            url: "getprojects.php",
-            success: function(data){
-                var $this = $("#projectlist").empty();
-                for (x in data) {
-                    $("<li />").text(data[x].value).appendTO($this);
-                };
-            }
-        });
-    }
+	function updateProjectList(){
+		$.ajax
+		({
+		   type: "GET",
+		   url: "getprojects.php",
+		   success: function(data)
+		   {
+				var $this = $("#projectlist").empty();
+				for (x in data) {
+					var b=$('<input/>').attr({
+						type: "button",
+						class: "deleteproject",
+						onclick: "javascript: deleteProject('"+data[x].key+"');",
+						value: 'X'
+					});
+					$(
+						$("<li />").text(data[x].value).appendTo($this)
+					).append(b); 
+				};
+		   }
+		
+		});
+	}
+
+	function deleteProject(projectID){
+		$.ajax
+		({
+		   type: "POST",
+		   url: "deleteproject.php",
+		   data: "projectID="+projectID,
+		   success: function(data)
+		   {
+				alert(data);
+				updateProjectList();
+		   }
+		
+		});
+	}
     </script>
 
 <div class="col-md-4">

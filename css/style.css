@@ -83,6 +83,11 @@ footer
     display: inline-block;
     text-align: center;
 }
+.deleteproject{
+    border: none;
+    margin-left: 20px;
+    background-color: #FFF;
+}
 @media screen and (min-width: 480px){
     .container
     {
