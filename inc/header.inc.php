@@ -19,7 +19,7 @@ function showheader($title){ ?>
     </head>
     <body>
         
-<?php if( isset($_SESSION['todo_admin'])&($_SESSION['todo_admin'] == 1)){
+<?php if( isset($_SESSION['todo_admin']) &&($_SESSION['todo_admin'] == 1)){
     ?>
     
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -47,6 +47,6 @@ function showheader($title){ ?>
       </div>
     </nav>
 <?php
+    }
 }
-                    }
 ?>
