@@ -17,6 +17,7 @@ body
     padding: 5%;
     margin-top: 5%;
     text-align: center;
+    padding-top: 25px;
 }
 .button
 {
@@ -59,6 +60,28 @@ footer
     height: 40px;
     padding: 5px;
     bottom: 0px;
+}
+#right
+{
+    text-align: right;
+}
+.left
+{
+    text-align: left;
+}
+#date
+{
+    height: 38px;
+}
+#addtask
+{
+    background-color: #33AF3D;
+    color: #FFF;
+    border-radius: 20px;
+    padding: 7px;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
 }
 @media screen and (min-width: 480px){
     .container

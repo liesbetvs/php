@@ -12,14 +12,15 @@ if(!isset($_SESSION['todo_login'])){
 <div class="login">
 <div class="row">
 
-<div class="col-md-4" id="overzicht">
+<div class="col-md-4 left">
     <a href="logout.php" target="_self">Logout</a>
      <img src="" alt=""> 
      <h2><?php echo $_SESSION['todo_fullname']; ?></h2>
-   <a href="">Add task</a>
+   <a href="#" target="_self">Add Project</a>
 </div>
 
-<div class="col-md-4" id="taken">
+<div class="col-md-4">
+<div id="date">&nbsp;</div>
 <ul><li>
     <img src="" alt="">
     <h2>titel</h2>
@@ -29,12 +30,12 @@ if(!isset($_SESSION['todo_login'])){
 </div>
 
 
-<div class="col-md-4" id="leden">
-<ul><li>
+<div class="col-md-4" id="right">
+<a href="#" target="_self" id="addtask">Add Task</a>
+<ul class="left"><li>
     <img src="" alt="">
     <h2>naam</h2>
-    <p>functie</p>
-</li></ul>    
+</li></ul> 
 </div>
 </div>
 </div>
