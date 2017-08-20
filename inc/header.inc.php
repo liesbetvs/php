@@ -13,6 +13,7 @@ function showheader($title){ ?>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
        <link rel="stylesheet" href="css/style.css">
+       <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script> 
         <meta charset="UTF-8">
         <title><?php echo $title; ?></title>
     </head>
