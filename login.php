@@ -12,7 +12,6 @@ try {
         $user->setUsername($username);
         $user->setPassword($password);
 
-        // 3) login functie:
         if ( $user->canLogin() == true) {
 			$error = "gelukt";
 			
@@ -50,7 +49,7 @@ showheader('login');
         <input type="password" id="password" name="password">
         <br>
         <input type="submit" class="button" name="login" value="login">
-        <p>or</p>
+        <br>or <br>
         <a href="register.php">register</a>
     </form>
     </div>
