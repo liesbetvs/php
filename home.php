@@ -15,7 +15,7 @@ if(!isset($_SESSION['todo_login'])){
 <div class="col-md-4" id="overzicht">
     <a href="logout.php" target="_self">Logout</a>
      <img src="" alt=""> 
-     <h2><?php echo $_SESSION['fullname']; ?></h2>
+     <h2><?php echo $_SESSION['todo_fullname']; ?></h2>
    <a href="">Add task</a>
 </div>
 

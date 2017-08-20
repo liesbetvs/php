@@ -18,7 +18,9 @@ function showheader($title){ ?>
     </head>
     <body>
         
-
+<?php if( isset($_SESSION['todo_admin'])&($_SESSION['todo_admin'] == 1)){
+    ?>
+    
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">Todo</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,4 +47,5 @@ function showheader($title){ ?>
     </nav>
 <?php
 }
+                    }
 ?>

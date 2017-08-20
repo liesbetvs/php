@@ -16,10 +16,9 @@ try {
 			$error = "gelukt";
 			
 			$user_data = $user->getDetails();
-			$_SESSION['username'] = $user_data['username'];
-			$_SESSION['email'] = $user_data['email'];
-			$_SESSION['fullname'] = $user_data['fullname'];
-			$_SESSION['todo_login'] = true;
+            $_SESSION['todo_admin'] = $user_data['admin'];
+			$_SESSION['todo_fullname'] = $user_data['fullname'];
+            $_SESSION['todo_login'] = true;
 			header('location: index.php');
         } else {
 			$error = "Wrong username/password combination";

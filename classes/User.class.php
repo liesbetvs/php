@@ -8,6 +8,7 @@ class User {
     private $lastname;
     private $password;
     private $fullname;
+    private $level;
 
     public function getEmail() {
         return $this->email;
@@ -80,6 +81,13 @@ class User {
         return $this->fullname;
     }
     
+    public function setLevel($level){
+        $this->level = $level;
+    }
+    public function getLevel(){
+        return $this->level;
+    }
+    
     public function canLogin(){
         $pdo = Db::getInstance();
         $stmt= $pdo->prepare("SELECT * FROM user WHERE username = :username LIMIT 0,1");
@@ -94,6 +102,7 @@ class User {
 
 			if( password_verify($password, $hash)) {
 				//passwords match
+                $this->setLevel($result[0]['admin']);
                 $this->setUsername($result[0]['username']);
                 $this->setEmail($result[0]['email']);
                 $this->setFirstname($result[0]['firstname']);
@@ -110,6 +119,7 @@ class User {
     }
     
     public function getDetails(){
+        $user_data['admin'] = $this->getLevel();
         $user_data['username'] = $this->getUsername();
         $user_data['email'] = $this->getEmail();
         $user_data['fullname'] = $this->getFullName();
@@ -132,9 +142,9 @@ class User {
         $stmt->bindValue(":password", $hash);
         $result = $stmt->execute();
         if($result){
-             return "De account is aangemaakt. U kunt nu <a href='login.php'>inloggen</a>.";
+             return "The account has been created. You can now <a href='login.php'>login</a>.";
         }else{
-            return "Er is een fout opgetreden tijdens het aanmaken van de account";
+            return "There was an error during the creation of the account. Please try again later.";
         }
     }
 
